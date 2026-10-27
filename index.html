@@ -14,6 +14,7 @@
             --panda-yellow: #FFB800;
             --sneaker-orange: #FF5A1F;
             --whatsapp-green: #25D366;
+            --youtube-red: #FF0000;
             --verified-blue: #0095F6;
             --ink-black: #111113;
             --bg-canvas: #FAFAFC;
@@ -221,6 +222,26 @@
         }
 
         .btn-orange:hover {
+            transform: scale(1.02);
+        }
+
+        .btn-youtube {
+            background: linear-gradient(135deg, #FF0000, #CC0000);
+            color: #fff;
+            padding: 13px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 6px 18px rgba(255, 0, 0, 0.28);
+            transition: 0.2s;
+        }
+
+        .btn-youtube:hover {
             transform: scale(1.02);
         }
 
@@ -538,7 +559,7 @@
             background: #20bd5a;
         }
 
-        /* 6. FOOTER (LEFT PANDA FULL-SIZE FIX + RIGHT PANDA FIXED) */
+        /* 6. FOOTER */
         footer {
             position: relative;
             background: #fff;
@@ -551,21 +572,19 @@
             overflow: hidden;
         }
 
-        /* Left Bottom Corner Panda (Now Cropped & FULL SIZE - No Shrinking!) */
         .footer-mascot {
             position: absolute;
             left: 2px;
             bottom: 0px;
-            width: 135px; /* Proper full width */
-            height: 150px; /* Cuts off the transparent empty upper space */
+            width: 135px;
+            height: 150px;
             object-fit: cover;
-            object-position: bottom center; /* Centers the sitting panda completely */
+            object-position: bottom center;
             pointer-events: none;
             z-index: 2;
             filter: drop-shadow(4px -4px 12px rgba(0,0,0,0.12));
         }
 
-        /* Top Right Corner Big Branch Accent (Remains Perfect as you liked) */
         .footer-top-right-img {
             position: absolute;
             right: -6px;
@@ -580,7 +599,6 @@
             filter: drop-shadow(-4px 4px 10px rgba(0,0,0,0.08));
         }
 
-        /* Centered Brand Content with Clear Breathing Room */
         .footer-content {
             position: relative;
             z-index: 5;
@@ -590,7 +608,7 @@
             text-align: center;
             margin: 0 auto;
             gap: 8px;
-            max-width: 220px; /* Safe space to prevent overlapping with both big mascots */
+            max-width: 220px;
         }
 
         .footer-brand {
@@ -627,10 +645,11 @@
             margin: 0;
         }
 
+        /* Footer Socials */
         .footer-socials {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin-top: 4px;
         }
 
@@ -648,8 +667,9 @@
             transition: 0.2s;
         }
 
-        .footer-socials a.wa-icon:hover { background: #25D366; color: #fff; }
         .footer-socials a.ig-icon:hover { background: var(--sneaker-orange); color: #fff; }
+        .footer-socials a.yt-icon:hover { background: var(--youtube-red); color: #fff; }
+        .footer-socials a.wa-icon:hover { background: var(--whatsapp-green); color: #fff; }
 
         /* 7. MOBILE STICKY BOTTOM APP BAR */
         .bottom-bar {
@@ -664,7 +684,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 0 10px;
+            padding: 0 6px;
             z-index: 1000;
         }
 
@@ -675,16 +695,17 @@
             gap: 3px;
             text-decoration: none;
             color: var(--ink-black);
-            font-size: 11px;
+            font-size: 10.5px;
             font-weight: 800;
         }
 
         .bottom-bar a i {
-            font-size: 18px;
+            font-size: 17px;
         }
 
-        .bottom-bar a.active-wa i { color: #25D366; }
         .bottom-bar a.active-ig i { color: var(--sneaker-orange); }
+        .bottom-bar a.active-yt i { color: var(--youtube-red); }
+        .bottom-bar a.active-wa i { color: var(--whatsapp-green); }
 
         /* Desktop Scaling */
         @media (min-width: 769px) {
@@ -693,7 +714,7 @@
             .hero { padding: 95px 8% 45px; }
             .panda-swing-unit { height: 210px; }
             .panda-swing-unit img { width: 180px; }
-            .hero-cta { flex-direction: row; justify-content: center; max-width: 460px; }
+            .hero-cta { flex-direction: row; justify-content: center; max-width: 580px; }
             
             .stats-wrapper {
                 max-width: 780px;
@@ -719,7 +740,6 @@
             .collab-hanging-unit { margin-top: -32px; height: 210px; }
             .collab-big-panda { width: 180px; }
             
-            /* Desktop Footer */
             footer {
                 padding: 35px 40px;
                 min-height: 230px;
@@ -773,9 +793,13 @@
         <h1>Comedy That Hits <span class="orange-txt">Directly</span> In The Heart!</h1>
         <p>Welcome to the official hub of <b>Mr. Panda 🐾</b>. Delivering daily relatable comedy sketches, viral humor, and pure entertainment with unmatched street swag!</p>
         
+        <!-- CTA Buttons: Instagram, YouTube, WhatsApp -->
         <div class="hero-cta">
             <a href="https://www.instagram.com/mr._panda_.__/" target="_blank" class="btn-orange">
                 <i class="fa-brands fa-instagram"></i> Follow on Instagram
+            </a>
+            <a href="https://youtube.com/@mr.pandafc" target="_blank" class="btn-youtube">
+                <i class="fa-brands fa-youtube"></i> Subscribe on YouTube
             </a>
             <a href="https://wa.me/919078776313?text=Hi%20Mr.%20Panda%2C%20I%20want%20to%20collaborate%20with%20you!" target="_blank" class="btn-whatsapp">
                 <i class="fa-brands fa-whatsapp"></i> Contact on WhatsApp
@@ -884,12 +908,12 @@
             </div>
             
             <h3>Work With <span>MR. PANDA</span> 🐾</h3>
-            <p class="collab-subtitle">Want to promote your brand, product, or campaign with viral comedy reels? Let's connect directly on WhatsApp!</p>
+            <p class="collab-subtitle">Want to promote your brand, product, or campaign with viral comedy reels & shorts? Let's connect directly on WhatsApp!</p>
 
             <div class="deliverables-list">
                 <div class="deliverable-item">
                     <i class="fa-solid fa-circle-check"></i>
-                    <span>Dedicated Comedy Reel Integration</span>
+                    <span>Dedicated Comedy Reel & YouTube Shorts</span>
                 </div>
                 <div class="deliverable-item">
                     <i class="fa-solid fa-circle-check"></i>
@@ -907,15 +931,11 @@
         </div>
     </section>
 
-    <!-- 6. FOOTER (BOTH SIDES PERFECTLY BALANCED AND PROMINENT) -->
+    <!-- 6. FOOTER -->
     <footer>
-        <!-- Left Side Bottom Corner Sitting Panda (Now Cleanly Cropped & FULL SIZE) -->
         <img src="https://i.postimg.cc/yd3ZzbKB/1000432345-removebg-preview.png" alt="Mr Panda Footer Mascot" class="footer-mascot">
-        
-        <!-- Top Right Corner Big Branch Accent -->
         <img src="https://i.postimg.cc/hjQdq5B3/1000432347-removebg-preview.png" alt="Footer Right Accent" class="footer-top-right-img">
 
-        <!-- Centered Brand Content -->
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="footer-brand-title">
@@ -927,14 +947,16 @@
                 <p class="footer-copy">© 2026 Mr. Panda. All Rights Reserved.</p>
             </div>
             
+            <!-- Social Icons: Instagram, YouTube, WhatsApp -->
             <div class="footer-socials">
-                <a href="https://www.instagram.com/mr._panda_.__/" target="_blank" class="ig-icon"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/919078776313?text=Hi%20Mr.%20Panda!" target="_blank" class="wa-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/mr._panda_.__/" target="_blank" class="ig-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://youtube.com/@mr.pandafc" target="_blank" class="yt-icon" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://wa.me/919078776313?text=Hi%20Mr.%20Panda!" target="_blank" class="wa-icon" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- App-Style Sticky Bottom Bar (Mobile Only) -->
+    <!-- App-Style Sticky Bottom Bar (Home, Reels, YouTube, Collab, Instagram) -->
     <div class="bottom-bar">
         <a href="#hero">
             <i class="fa-solid fa-house" style="color: var(--ink-black);"></i>
@@ -943,6 +965,10 @@
         <a href="#videos">
             <i class="fa-solid fa-play" style="color: var(--sneaker-orange);"></i>
             <span>Reels</span>
+        </a>
+        <a href="https://youtube.com/@mr.pandafc" target="_blank" class="active-yt">
+            <i class="fa-brands fa-youtube"></i>
+            <span>YouTube</span>
         </a>
         <a href="#collab">
             <i class="fa-solid fa-handshake" style="color: var(--panda-yellow);"></i>
@@ -971,6 +997,7 @@
             });
         });
 
+        // Aapka exact views data
         const reelViewsData = {
             reel1: 1618, 
             reel2: 1587, 
